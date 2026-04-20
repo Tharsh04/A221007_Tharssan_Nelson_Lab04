@@ -6,7 +6,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.*
-// IMPORTANT: Add this import if BottomNav is inside the ui.theme folder
 import com.example.a221007_tharssan_nelson_lab04.ui.theme.BottomNav
 
 @Composable
@@ -17,7 +16,7 @@ fun AppNavigation(donorViewModel: DonorViewModel = viewModel()) {
 
     Scaffold(
         bottomBar = {
-            // Only show bottom nav if user is logged in
+            // show bottom nav if user is logged in
             if (donorViewModel.userType != null && donorViewModel.donorName.isNotBlank()) {
                 BottomNav(
                     currentView = currentRoute ?: "home",
@@ -43,10 +42,8 @@ fun AppNavigation(donorViewModel: DonorViewModel = viewModel()) {
                 DonateFoodScreen(
                     donorName = donorViewModel.donorName,
                     donorEmail = donorViewModel.donorEmail,
-                    // FIXED: Added missing onDonate parameter
                     onDonate = { donation ->
-                        // You can add logic here later to save the donation to a list
-                        // For now, an empty block satisfies the compiler
+                        
                     },
                     onBack = { navController.popBackStack() }
                 )
