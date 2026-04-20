@@ -95,7 +95,7 @@ fun CharityGoalCard(campaign: CharityCampaign, onDonate: () -> Unit) {
                     modifier = Modifier.height(160.dp).fillMaxWidth(),
                     contentScale = ContentScale.Crop
                 )
-                // Small badge for organization name
+                
                 Surface(
                     color = Color.Black.copy(alpha = 0.6f),
                     shape = RoundedCornerShape(topEnd = 12.dp),
@@ -115,7 +115,7 @@ fun CharityGoalCard(campaign: CharityCampaign, onDonate: () -> Unit) {
 
                 Spacer(modifier = Modifier.height(4.dp))
 
-                // Short description (Visible Always)
+                
                 Text(
                     text = campaign.description,
                     fontSize = 14.sp,
@@ -124,7 +124,7 @@ fun CharityGoalCard(campaign: CharityCampaign, onDonate: () -> Unit) {
                     overflow = TextOverflow.Ellipsis
                 )
 
-                // GOAL DESCRIPTION (Visible Only when Expanded)
+              
                 if (isExpanded) {
                     Divider(Modifier.padding(vertical = 12.dp), thickness = 0.5.dp, color = Color.LightGray)
                     Text("Our Mission & Goals:", fontWeight = FontWeight.Bold, color = Color(0xFF9A3412), fontSize = 14.sp)
