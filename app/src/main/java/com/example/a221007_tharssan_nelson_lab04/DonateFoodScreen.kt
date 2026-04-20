@@ -1,4 +1,3 @@
-// FIXED: Removed ".ui.theme" to match your actual file location shown in the error screenshot
 package com.example.a221007_tharssan_nelson_lab04
 
 import androidx.compose.foundation.*
@@ -18,7 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.*
 import kotlinx.coroutines.delay
 
-// Helper data class for the local UI
+
 data class FoodPackageItem(val id: String, val name: String, val description: String, val items: List<String>, val color: Color)
 
 @Composable
@@ -71,7 +70,7 @@ fun DonateFoodScreen(
                 Card(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp), elevation = CardDefaults.cardElevation(4.dp)) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text("Select Charity", fontWeight = FontWeight.Bold, fontSize = 14.sp)
-                        // This will now resolve correctly once the package header is fixed
+                        
                         charityCampaigns.forEach { charity ->
                             Row(
                                 modifier = Modifier
